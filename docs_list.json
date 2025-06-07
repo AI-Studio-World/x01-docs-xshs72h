@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ims",
+    "title": "IMS Inventory Management Software",
+    "version": "2.3.1",
+    "lastUpdated": "2025-06-01T14:35:00Z",
+    "description": "Offline-first inventory management system for small businesses.",
+    "tags": ["inventory", "offline", "ims"],
+    "thumbnail": "https://raw.githubusercontent.com/arshc0der/Inventory-Management-System/main/preview/1.png"
+  },
+  {
+    "id": "pos",
+    "title": "POS Point of Sale System",
+    "version": "1.8.0",
+    "lastUpdated": "2025-05-20T11:00:00Z",
+    "description": "A fast and reliable POS software for retail stores.",
+    "tags": ["pos", "retail", "sales"],
+    "thumbnail": "https://example.com/assets/pos-thumbnail.png"
+  },
+  {
+    "id": "crm",
+    "title": "CRM Customer Relationship Manager",
+    "version": "3.0.5",
+    "lastUpdated": "2025-04-15T09:25:00Z",
+    "description": "Manage your customer relations with ease and automation.",
+    "tags": ["crm", "customer", "automation"],
+    "thumbnail": "https://example.com/assets/crm-thumbnail.png"
+  }
+]
