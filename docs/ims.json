@@ -11,9 +11,8 @@
     }
   ],
   "tags": ["inventory", "offline", "small business", "management", "ims"],
-  "description": "Comprehensive documentation for IMS, the offline-first inventory management system.",
   "intro": {
-    "text": "Welcome to the IMS documentation. This guide covers installation, usage, advanced features, and troubleshooting.",
+    "text": "Welcome to the IMS documentation. This guide covers installation, usage, features, and API.",
     "image": {
       "src": "https://raw.githubusercontent.com/arshc0der/Inventory-Management-System/main/preview/1.png",
       "alt": "IMS Dashboard preview"
@@ -23,134 +22,46 @@
     {
       "id": "installation",
       "title": "Installation",
-      "summary": "Step-by-step installation instructions for IMS.",
+      "summary": "How to install IMS",
       "content": [
         {
           "type": "paragraph",
-          "text": "To install IMS, download the installer from the Microsoft Store or our website."
-        },
-        {
-          "type": "list",
-          "ordered": true,
-          "items": [
-            "Download the installer.",
-            "Run the installer.",
-            "Follow the setup wizard.",
-            "Launch IMS and create your first inventory."
-          ]
+          "text": "Download IMS from the Microsoft Store or website."
         },
         {
           "type": "code",
           "language": "bash",
           "code": "winget install IMS"
-        },
-        {
-          "type": "image",
-          "src": "https://raw.githubusercontent.com/arshc0der/Inventory-Management-System/main/preview/2.png",
-          "alt": "Installation screen"
         }
       ]
     },
     {
       "id": "usage",
       "title": "Usage",
-      "summary": "Learn how to use IMS’s key features effectively.",
+      "summary": "Using IMS features",
       "content": [
         {
           "type": "paragraph",
-          "text": "The dashboard provides real-time inventory stats and alerts."
+          "text": "The dashboard shows stock, sales, and more."
         },
         {
-          "type": "subsections",
-          "sections": [
-            {
-              "id": "dashboard",
-              "title": "Dashboard Overview",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "text": "The dashboard displays your current stock, sales, and notifications."
-                },
-                {
-                  "type": "image",
-                  "src": "https://raw.githubusercontent.com/arshc0der/Inventory-Management-System/main/preview/4.png",
-                  "alt": "Dashboard screenshot"
-                }
-              ]
-            },
-            {
-              "id": "alerts",
-              "title": "Smart Alerts",
-              "content": [
-                {
-                  "type": "paragraph",
-                  "text": "Configure alerts to receive notifications for low stock or pending orders."
-                },
-                {
-                  "type": "list",
-                  "ordered": false,
-                  "items": [
-                    "Low stock notifications",
-                    "Order confirmation alerts",
-                    "User activity logs"
-                  ]
-                }
-              ]
-            }
-          ]
+          "type": "image",
+          "src": "https://raw.githubusercontent.com/arshc0der/Inventory-Management-System/main/preview/4.png",
+          "alt": "Dashboard"
         }
       ]
     },
     {
       "id": "api",
       "title": "API Reference",
-      "summary": "Detailed API documentation for developers.",
+      "summary": "REST API details",
       "content": [
-        {
-          "type": "paragraph",
-          "text": "IMS exposes REST endpoints for inventory and user management."
-        },
         {
           "type": "code",
           "language": "json",
-          "code": "{\n  \"endpoint\": \"/api/inventory\",\n  \"method\": \"GET\",\n  \"description\": \"Fetch list of inventory items.\"\n}"
-        },
-        {
-          "type": "link",
-          "text": "Full API Spec",
-          "href": "https://x01global.com/api-docs/ims"
+          "code": "{ \"endpoint\": \"/api/inventory\", \"method\": \"GET\" }"
         }
       ]
-    },
-    {
-      "id": "troubleshooting",
-      "title": "Troubleshooting",
-      "summary": "Common issues and how to fix them.",
-      "content": [
-        {
-          "type": "paragraph",
-          "text": "If IMS does not start, check your Windows version and ensure prerequisites are installed."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            "Ensure .NET runtime is installed.",
-            "Check firewall settings.",
-            "Restart your computer."
-          ]
-        }
-      ]
-    }
-  ],
-  "references": [
-    {
-      "title": "IMS Official Website",
-      "url": "https://x01global.com/product/soft/ims"
-    },
-    {
-      "title": "Microsoft Store IMS",
-      "url": "https://apps.microsoft.com/detail/9p0jjx40lsk5?hl=en-us&gl=IN"
     }
   ]
 }
