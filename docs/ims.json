@@ -1,52 +1,53 @@
 {
   "id": "ims",
-  "title": "IMS Software",
+  "title": "IMS Software Documentation",
   "version": "2.3.1",
   "lastUpdated": "2025-06-01T14:35:00Z",
   "intro": {
-    "text": "Welcome to IMS Software documentation. IMS is a cutting-edge Integrated Management System designed for enterprise workflow automation and reporting.",
+    "text": "Welcome to the official IMS Software documentation portal. IMS offers robust workflow automation and management tools designed for enterprise environments.",
     "image": {
-      "src": "https://via.placeholder.com/600x150?text=IMS+Software+Banner",
-      "alt": "IMS Software Banner"
+      "src": "https://via.placeholder.com/800x150?text=IMS+Software+Documentation+Banner",
+      "alt": "IMS Documentation Banner"
     }
   },
   "sections": [
     {
       "id": "chapter1",
       "title": "Chapter 1: Installation and Setup",
-      "summary": "This chapter covers detailed installation instructions, initial configuration, and system requirements for IMS Software.",
+      "summary": "Learn how to install IMS Software, configure initial settings, and prepare your environment for optimal performance.",
       "content": [
         {
           "type": "paragraph",
-          "text": "To install IMS, ensure your system meets the minimum requirements: Windows 10 or higher, 8GB RAM, 50GB free disk space, and .NET Framework 4.8. Begin by downloading the installer from the official website."
+          "text": "IMS requires Windows 10 or later, 8GB of RAM minimum, 50GB of disk space, and .NET Framework 4.8 or higher. Download the latest installer from our website and run it with Administrator privileges."
         },
         {
           "type": "code",
+          "language": "bash",
           "code": "curl -O https://ims-software.com/download/ims-installer.exe\nstart ims-installer.exe"
         },
         {
           "type": "paragraph",
-          "text": "After running the installer, follow the on-screen instructions. You can choose between a Typical or Custom setup. Custom setup allows you to configure the database connection and network options."
+          "text": "During setup, choose between Typical or Custom installation modes. Custom mode lets you configure database connections and network settings."
         },
         {
           "type": "image",
-          "src": "https://via.placeholder.com/400x250?text=IMS+Installer+Screenshot",
-          "alt": "Installer Screenshot"
+          "src": "https://via.placeholder.com/450x250?text=Installer+Wizard+Screenshot",
+          "alt": "IMS Installer Wizard"
         },
         {
           "type": "list",
           "ordered": false,
           "items": [
-            "Verify that SQL Server is installed and accessible.",
-            "Configure firewall rules to allow IMS network traffic.",
-            "Create an admin account during setup."
+            "Ensure SQL Server 2019 or higher is installed and reachable.",
+            "Configure Windows Firewall to allow IMS traffic on port 8080.",
+            "Create an administrator account for IMS management."
           ]
         },
         {
           "type": "table",
           "headers": ["Requirement", "Minimum", "Recommended"],
           "rows": [
-            ["Operating System", "Windows 10", "Windows 11"],
+            ["Operating System", "Windows 10", "Windows 11 Pro"],
             ["RAM", "8 GB", "16 GB"],
             ["Disk Space", "50 GB", "100 GB"],
             ["Network", "1 Gbps", "10 Gbps"]
@@ -55,26 +56,27 @@
         {
           "type": "link",
           "href": "https://ims-software.com/support/install-guide",
-          "text": "Full Installation Guide"
+          "text": "Complete Installation Guide"
         },
         {
           "type": "subsections",
           "sections": [
             {
               "id": "subtopic1",
-              "title": "Troubleshooting Installation Issues",
+              "title": "Troubleshooting Installation",
               "content": [
                 {
                   "type": "paragraph",
-                  "text": "If you encounter errors during installation, check your system logs located in %APPDATA%/IMS/logs for detailed error messages."
+                  "text": "If installation fails, review logs found in %APPDATA%\\IMS\\logs\\install.log to diagnose issues."
                 },
                 {
                   "type": "code",
-                  "code": "type %APPDATA%\\IMS\\logs\\install.log"
+                  "language": "powershell",
+                  "code": "Get-Content $env:APPDATA\\IMS\\logs\\install.log -Tail 50"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Common issues include missing prerequisites or insufficient permissions. Running the installer as Administrator often resolves permission issues."
+                  "text": "Common errors involve missing prerequisites or permission issues. Run installer as Administrator for best results."
                 }
               ]
             },
@@ -84,15 +86,16 @@
               "content": [
                 {
                   "type": "paragraph",
-                  "text": "After installation, configure IMS using the Setup Wizard or edit the config file located at C:\\ProgramData\\IMS\\config.json."
+                  "text": "Configure IMS either via the Setup Wizard or by editing the config file at C:\\ProgramData\\IMS\\config.json."
                 },
                 {
                   "type": "code",
+                  "language": "json",
                   "code": "{\n  \"database\": {\n    \"host\": \"localhost\",\n    \"port\": 1433,\n    \"user\": \"admin\",\n    \"password\": \"******\"\n  },\n  \"network\": {\n    \"port\": 8080,\n    \"ssl\": true\n  }\n}"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Ensure you restart the IMS service after making changes."
+                  "text": "Restart the IMS service after configuration changes to apply settings."
                 }
               ]
             }
@@ -103,48 +106,50 @@
     {
       "id": "chapter2",
       "title": "Chapter 2: User Management and Roles",
-      "summary": "This chapter explains user account management, role definitions, and permissions within IMS Software.",
+      "summary": "Manage users, define roles, and set permissions effectively with IMS User Management tools.",
       "content": [
         {
           "type": "paragraph",
-          "text": "IMS provides a flexible user management system. Administrators can create users, assign roles, and manage permissions through the Admin Console."
+          "text": "IMS supports role-based access control (RBAC) allowing you to assign granular permissions to users based on their role."
         },
         {
           "type": "image",
-          "src": "https://via.placeholder.com/400x200?text=User+Management+Console",
-          "alt": "User Management Console"
+          "src": "https://via.placeholder.com/450x200?text=User+Management+Dashboard",
+          "alt": "IMS User Management Dashboard"
         },
         {
           "type": "paragraph",
-          "text": "Roles include Admin, Manager, and Viewer, each with different access levels. The system supports custom roles with granular permission control."
+          "text": "Predefined roles include Admin, Manager, and Viewer. Custom roles can be created for specific access needs."
         },
         {
           "type": "code",
-          "code": "// Example: Add a new user via IMS API\nPOST /api/users\n{\n  \"username\": \"jdoe\",\n  \"role\": \"Manager\",\n  \"email\": \"jdoe@example.com\"\n}"
+          "language": "json",
+          "code": "{\n  \"username\": \"jdoe\",\n  \"role\": \"Manager\",\n  \"email\": \"jdoe@example.com\"\n}"
         },
         {
           "type": "list",
           "ordered": true,
           "items": [
-            "Login to Admin Console.",
-            "Navigate to Users tab.",
-            "Click 'Add User' and fill in details.",
-            "Assign appropriate role and save."
+            "Login to the Admin Console.",
+            "Navigate to the Users tab.",
+            "Click 'Add User' and fill out the form.",
+            "Assign roles and permissions.",
+            "Save the new user."
           ]
         },
         {
           "type": "table",
           "headers": ["Role", "Permissions", "Description"],
           "rows": [
-            ["Admin", "Full access", "Manage users, settings, and data."],
+            ["Admin", "Full access", "Manage users, settings, and system data."],
             ["Manager", "Edit access", "Manage projects and reports."],
-            ["Viewer", "Read-only", "View data and reports only."]
+            ["Viewer", "Read-only", "View data and reports."]
           ]
         },
         {
           "type": "link",
           "href": "https://ims-software.com/docs/user-management",
-          "text": "User Management Documentation"
+          "text": "User Management Docs"
         },
         {
           "type": "subsections",
@@ -155,11 +160,12 @@
               "content": [
                 {
                   "type": "paragraph",
-                  "text": "IMS implements RBAC to ensure secure access. Permissions are grouped into roles for simplified management."
+                  "text": "RBAC ensures users only access what they're authorized for by grouping permissions into roles."
                 },
                 {
                   "type": "code",
-                  "code": "function checkPermission(userRole, permission) {\n  const roles = {\n    admin: ['read', 'write', 'delete'],\n    manager: ['read', 'write'],\n    viewer: ['read']\n  };\n  return roles[userRole].includes(permission);\n}"
+                  "language": "javascript",
+                  "code": "function hasPermission(role, permission) {\n  const roles = {\n    admin: ['read', 'write', 'delete'],\n    manager: ['read', 'write'],\n    viewer: ['read']\n  };\n  return roles[role]?.includes(permission) || false;\n}"
                 }
               ]
             }
