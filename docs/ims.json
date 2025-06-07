@@ -19,51 +19,35 @@
       "alt": "IMS Dashboard preview"
     }
   },
-  "chapters": [
+  "sections": [
     {
       "id": "installation",
       "title": "Installation",
       "summary": "Step-by-step installation instructions for IMS.",
-      "subtopics": [
+      "content": [
         {
-          "id": "windows-installation",
-          "title": "Windows Installation",
-          "content": [
-            {
-              "type": "paragraph",
-              "text": "To install IMS on Windows, download the installer from the Microsoft Store or our website."
-            },
-            {
-              "type": "list",
-              "ordered": true,
-              "items": [
-                "Download the installer.",
-                "Run the installer.",
-                "Follow the setup wizard.",
-                "Launch IMS and create your first inventory."
-              ]
-            },
-            {
-              "type": "code",
-              "language": "bash",
-              "code": "winget install IMS"
-            },
-            {
-              "type": "image",
-              "src": "https://raw.githubusercontent.com/arshc0der/Inventory-Management-System/main/preview/2.png",
-              "alt": "Installation screen"
-            }
+          "type": "paragraph",
+          "text": "To install IMS, download the installer from the Microsoft Store or our website."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Download the installer.",
+            "Run the installer.",
+            "Follow the setup wizard.",
+            "Launch IMS and create your first inventory."
           ]
         },
         {
-          "id": "mac-installation",
-          "title": "Mac Installation",
-          "content": [
-            {
-              "type": "paragraph",
-              "text": "IMS is currently not available for Mac OS. Stay tuned for future updates."
-            }
-          ]
+          "type": "code",
+          "language": "bash",
+          "code": "winget install IMS"
+        },
+        {
+          "type": "image",
+          "src": "https://raw.githubusercontent.com/arshc0der/Inventory-Management-System/main/preview/2.png",
+          "alt": "Installation screen"
         }
       ]
     },
@@ -71,9 +55,9 @@
       "id": "usage",
       "title": "Usage",
       "summary": "Learn how to use IMS’s key features effectively.",
-      "subtopics": [
+      "subsections": [
         {
-          "id": "dashboard-overview",
+          "id": "dashboard",
           "title": "Dashboard Overview",
           "content": [
             {
@@ -88,7 +72,7 @@
           ]
         },
         {
-          "id": "smart-alerts",
+          "id": "alerts",
           "title": "Smart Alerts",
           "content": [
             {
@@ -109,29 +93,23 @@
       ]
     },
     {
-      "id": "api-reference",
+      "id": "api",
       "title": "API Reference",
       "summary": "Detailed API documentation for developers.",
-      "subtopics": [
+      "content": [
         {
-          "id": "inventory-endpoints",
-          "title": "Inventory Endpoints",
-          "content": [
-            {
-              "type": "paragraph",
-              "text": "IMS exposes REST endpoints for inventory and user management."
-            },
-            {
-              "type": "code",
-              "language": "json",
-              "code": "{\n  \"endpoint\": \"/api/inventory\",\n  \"method\": \"GET\",\n  \"description\": \"Fetch list of inventory items.\"\n}"
-            },
-            {
-              "type": "link",
-              "text": "Full API Spec",
-              "href": "https://x01global.com/api-docs/ims"
-            }
-          ]
+          "type": "paragraph",
+          "text": "IMS exposes REST endpoints for inventory and user management."
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"endpoint\": \"/api/inventory\",\n  \"method\": \"GET\",\n  \"description\": \"Fetch list of inventory items.\"\n}"
+        },
+        {
+          "type": "link",
+          "text": "Full API Spec",
+          "href": "https://x01global.com/api-docs/ims"
         }
       ]
     },
@@ -139,24 +117,18 @@
       "id": "troubleshooting",
       "title": "Troubleshooting",
       "summary": "Common issues and how to fix them.",
-      "subtopics": [
+      "content": [
         {
-          "id": "startup-issues",
-          "title": "Startup Issues",
-          "content": [
-            {
-              "type": "paragraph",
-              "text": "If IMS does not start, check your Windows version and ensure prerequisites are installed."
-            },
-            {
-              "type": "list",
-              "ordered": false,
-              "items": [
-                "Ensure .NET runtime is installed.",
-                "Check firewall settings.",
-                "Restart your computer."
-              ]
-            }
+          "type": "paragraph",
+          "text": "If IMS does not start, check your Windows version and ensure prerequisites are installed."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Ensure .NET runtime is installed.",
+            "Check firewall settings.",
+            "Restart your computer."
           ]
         }
       ]
